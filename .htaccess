@@ -1,0 +1,11 @@
+# Bloquear listado de directorios
+Options -Indexes
+
+# Si se solicita la raíz del directorio, procesar index.php
+DirectoryIndex index.php
+
+# Proteger archivos sensibles
+<FilesMatch "^\.env|composer\.(json|lock)|artisan">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
